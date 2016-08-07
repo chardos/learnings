@@ -25,3 +25,17 @@ end
 
 IO.puts bingo.(card) | outputs: "Bingo!"
 ```
+
+#### Destructuring
+
+```
+{a,2,3} = {1,2,3}
+a => 1
+```
+
+You can also use wildcards `_` to say, I don't care what sits in that slot.
+
+```
+{a,2,_} = {1,2,3}  |  output=> {1,2,3}
+a => 1
+```

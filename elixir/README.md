@@ -41,3 +41,8 @@ Read a tuple:
 hello = fn (p) -> "Hello #{p}!" end
 hello.("Rich")
 ```
+
+### Maps
+```
+map = %{a: => 1, b: => 2}
+```
