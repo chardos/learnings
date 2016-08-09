@@ -35,7 +35,7 @@ Create a tuple:
 Read a tuple:  
 `elem(t, 1)` -> 5
 
-### Function
+### Anonymous Function
 
 ```
 hello = fn (p) -> "Hello #{p}!" end
