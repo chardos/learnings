@@ -6,3 +6,8 @@ With the bang `let!` will build the category straight away, without the bang it 
 
 - Indexing:
   - Always index foreign keys
+
+
+## Logging javascript
+
+`page.driver.console_messages`
