@@ -33,7 +33,7 @@ end
 player_1 = self
 
 #2. get spawned process pid
-player_2 = spawn(PingPong, :ready, [])
+player_2 = Task.start(PingPong, :ready, [])
 
 #3. inspect PID values
 IO.puts "player_1: #{inspect player_1}"

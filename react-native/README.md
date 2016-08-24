@@ -1,0 +1,3 @@
+- Dev tools menu - `cmd + D`
+- Start server - `npm start`
+- Run IOS - `react-native run-ios`
