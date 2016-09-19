@@ -13,6 +13,8 @@
 		return this;
 	};
 
+  function GreenCircle(){}
+
   var ShapeFactory = function(){
     this.types = {};
     this.create = function(type){
@@ -22,12 +24,14 @@
       if(cls.prototype.create){
         this.types[type] = cls;
       }
+      else{console.error(type + ' doesnt have create on prototype')}
     }
   }
 
   var shapeFactory = new ShapeFactory();
   shapeFactory.register('red', RedCircle);
   shapeFactory.register('blue', BlueCircle);
+  shapeFactory.register('green', GreenCircle);
   console.log('shape fact', shapeFactory);
   var blueCircle = shapeFactory.create('blue');
   console.log(blueCircle);
