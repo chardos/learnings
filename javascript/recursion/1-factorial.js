@@ -8,7 +8,7 @@ let factorial = (num, accumulator = 1) => {
 console.log(factorial(6));
 
 
-// Better way
+// Another way
 
 function factorial(x) {
   if (x === 0) {

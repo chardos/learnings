@@ -19,26 +19,6 @@ const merge = (left, right, sorted = []) => {
 }
 // merge([2,3,5,12,27], [2,9,11,23,42]);
 
-// My merge sort
-const mergeSort = (array, mergedArray = [], originalLength = array.length) => {
-    debugger;
-    if (mergedArray[0] && mergedArray[0].length === originalLength) return mergedArray[0];
-    if (array.length == 0){
-        return mergeSort( mergedArray, [], originalLength )
-    }
-    else {
-        // First pass, wrap the numbers in arrays
-        if (typeof array[0] == 'number') array[0] = [array[0]];
-        if (typeof array[1] == 'number') array[1] = [array[1]];
-        return mergeSort(
-            array.slice(2),
-            [ ...mergedArray, merge(array[0], array[1] || []) ],
-            originalLength
-        )
-    }
-}
-mergeSort([7, 3, 4, 1, 5])
-
 
 // Merge sort from the web
 function mergeSort(items){
@@ -56,5 +36,5 @@ function mergeSort(items){
     return merge(mergeSort(left), mergeSort(right));
 }
 
-// mergeSort([7,3,43,87,43,13,75,3,74,9,99])
-mergeSort([7,3,4,1])
+mergeSort([7,3,43,87,43,13,75,3,74,9,99])
+// mergeSort([7,3,4,1])
