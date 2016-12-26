@@ -1,9 +1,11 @@
 function checker(currentObject, toCheck){
     const noObjectsLeft = toCheck.length === 0;
-    const objectExists = currentObject && noObjectsLeft;
 
+    if(!currentObject){
+        return false;
+    }
     if(noObjectsLeft){
-        return !!objectExists;
+        return true;
     }
     return checker( currentObject[toCheck[0]], toCheck.slice(1) );
 }

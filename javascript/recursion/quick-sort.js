@@ -5,18 +5,47 @@ function swap(list, firstIndex, secondIndex){
     return newList;
 }
 
-function partition(){
-    
+function partition(list, leftPointer, rightPointer){
+    const pivot = list[Math.floor((leftPointer + rightPointer)/2)];
+
+    while(leftPointer <= rightPointer){
+        while(list[leftPointer] < pivot){
+            leftPointer++;
+        }
+        while(list[rightPointer] > pivot){
+            rightPointer++;
+        }
+        if(leftPointer <= rightPointer){
+            list = swap(list, leftPointer, rightPointer);
+            leftPointer++;
+            rightPointer++;
+        }
+    }
+    return leftPointer;
+}
+partition([4,5,6,7], 0, 3)
+
+function quickSort(list, left = 0, right = list.length - 1) {
+
+    var index;
+
+    if (list.length > 1) {
+
+        index = partition(list, left, right);
+
+        if (left < index - 1) {
+            quickSort(list, left, index - 1);
+        }
+
+        if (index < right) {
+            quickSort(list, index, right);
+        }
+
+    }
+
+    return list;
 }
 
-function quickSort(list){
-    const midIndex = Math.floor(list.length/2);
-    const pivot = list[midIndex];
 
-    // const firstArray = list.slice(0, midIndex);
-    // const secondArray = list.slice(midIndex + 1);
-    // console.log(firstArray);
-    // console.log(secondArray);
-}
-
-quickSort([5,3,7,14,6,4,9,12]);
+// first call
+var result = quickSort([5,3,7,14,6,4,9,12]);
