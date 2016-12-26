@@ -1,51 +1,56 @@
-function swap(list, firstIndex, secondIndex){
-    const newList = [...list];
-    newList[firstIndex] = list[secondIndex];
-    newList[secondIndex] = list[firstIndex];
-    return newList;
+function swap(items, firstIndex, secondIndex){
+    var temp = items[firstIndex];
+    items[firstIndex] = items[secondIndex];
+    items[secondIndex] = temp;
 }
 
-function partition(list, leftPointer, rightPointer){
-    const pivot = list[Math.floor((leftPointer + rightPointer)/2)];
+function partition(items, left, right) {
 
-    while(leftPointer <= rightPointer){
-        while(list[leftPointer] < pivot){
-            leftPointer++;
+    var pivot   = items[Math.floor((right + left) / 2)],
+        i       = left,
+        j       = right;
+
+
+    while (i <= j) {
+
+        while (items[i] < pivot) {
+            i++;
         }
-        while(list[rightPointer] > pivot){
-            rightPointer++;
+
+        while (items[j] > pivot) {
+            j--;
         }
-        if(leftPointer <= rightPointer){
-            list = swap(list, leftPointer, rightPointer);
-            leftPointer++;
-            rightPointer++;
+
+        if (i <= j) {
+            swap(items, i, j);
+            i++;
+            j--;
         }
     }
-    return leftPointer;
-}
-partition([4,5,6,7], 0, 3)
 
-function quickSort(list, left = 0, right = list.length - 1) {
+    return i;
+}
+
+function quickSort(items, left = 0, right = items.length - 1) {
 
     var index;
 
-    if (list.length > 1) {
+    if (items.length > 1) {
 
-        index = partition(list, left, right);
+        index = partition(items, left, right);
 
         if (left < index - 1) {
-            quickSort(list, left, index - 1);
+            quickSort(items, left, index - 1);
         }
 
         if (index < right) {
-            quickSort(list, index, right);
+            quickSort(items, index, right);
         }
 
     }
 
-    return list;
+    return items;
 }
 
-
 // first call
-var result = quickSort([5,3,7,14,6,4,9,12]);
+quickSort([5,3,7,14,6,4,9,12]);
