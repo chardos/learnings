@@ -6,8 +6,7 @@ function swap(items, firstIndex, secondIndex){
 
 function partition(items, leftIndex, rightIndex) {
 
-    var pivot   = items[Math.floor((rightIndex + leftIndex) / 2)];
-
+    var pivot = items[Math.floor((rightIndex + leftIndex) / 2)];
 
     while (leftIndex <= rightIndex) {
 
