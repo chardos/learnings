@@ -30,7 +30,7 @@ function partition(items, leftIndex, rightIndex) {
 }
 
 function quickSort(items, leftIndex = 0, rightIndex = items.length - 1) {
-    debugger;
+    // debugger;
     var index;
 
     if (items.length > 1) {
@@ -40,11 +40,11 @@ function quickSort(items, leftIndex = 0, rightIndex = items.length - 1) {
         items = partitionResult.items;
 
         if (leftIndex < index - 1) {
-            return quickSort(items, leftIndex, index - 1);
+            items = quickSort(items, leftIndex, index - 1);
         }
 
         if (index < rightIndex) {
-            return quickSort(items, index, rightIndex);
+            items = quickSort(items, index, rightIndex);
         }
 
     }
