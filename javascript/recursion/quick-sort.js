@@ -30,7 +30,7 @@ function partition(items, leftIndex, rightIndex) {
 }
 
 function quickSort(items, leftIndex = 0, rightIndex = items.length - 1) {
-    // debugger;
+    debugger;
     var index;
 
     if (items.length > 1) {
@@ -53,4 +53,5 @@ function quickSort(items, leftIndex = 0, rightIndex = items.length - 1) {
 }
 
 // first call
-quickSort([5,3,7,14,6,4,9,12]);
+// quickSort([5,3,7,14,6,4,9,12]);
+quickSort([14,5,3,7]);
