@@ -1,6 +1,6 @@
-let range = (num1, num2, arr = [num2]) => {
-    if (num1 === num2) return arr;
-    return range(num1, num2 - 1, [num2 - 1, ...arr])
+let range = (start, end, arr = [end]) => {
+    if (start === end) return arr;
+    return range(start, end - 1, [end - 1, ...arr])
 }
 
 // 3, 7, [7]
