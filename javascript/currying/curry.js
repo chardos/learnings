@@ -1,3 +1,5 @@
+module.exports = curry;
+
 function curry(fn){
     // look at the expected number of args
     const expectedNumArgs = fn.length;
