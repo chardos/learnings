@@ -10,7 +10,13 @@ function addFive(num){
     return num + 5;
 }
 
+function multiplyBy3(num){
+    return num * 3;
+}
+
 var addFiveToAll = map(addFive);
+var multiplyAllBy3 = map(multiplyBy3);
 
 var arr = [3,5,7];
-console.log(addFiveToAll(arr));
+console.log( addFiveToAll(arr) );
+console.log( multiplyAllBy3(arr) );
