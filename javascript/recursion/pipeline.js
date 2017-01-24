@@ -7,6 +7,9 @@ function multiply3(num){
 function halve(num){
     return num / 2;
 }
+function dollarize(num){
+    return '$' + num;
+}
 
 // console.log(multiply3(add5(10)));
 
@@ -23,6 +26,7 @@ function pipeline(...fns){
 const addAndMultiply = pipeline(
     add5,
     multiply3,
-    halve
+    halve,
+    dollarize
 )
 console.log(addAndMultiply(10));
