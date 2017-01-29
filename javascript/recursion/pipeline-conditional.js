@@ -22,8 +22,6 @@ function pipeline(...args){
 
             if(shouldRun){ return fn(value) }
             else { return value }
-
-
         }, value);
     }
 }
@@ -31,7 +29,12 @@ function pipeline(...args){
 const addAndMultiply = pipeline(
     [add5, true],
     multiply3,
-    halve,
-    dollarize
+    halve
 )
+const withDollarize = pipeline(
+    addAndMultiply,
+    dollarize
+);
+
 console.log(addAndMultiply(10));
+console.log(withDollarize(10));
