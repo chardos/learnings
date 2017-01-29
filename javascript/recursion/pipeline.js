@@ -16,10 +16,9 @@ function dollarize(num){
 
 function pipeline(...fns){
     return function(value){
-        fns.unshift(value);
         return fns.reduce((value, fn) => {
             return fn(value);
-        })
+        }, value)
     }
 }
 
