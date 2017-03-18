@@ -2,14 +2,13 @@
 
 var handler = {
     get: function(target, name) {
-        // console.log(name);
-        // console.log('typesof',typeof target[name]);
         return name in target ?
             target[name] :
-            function(){
-                return new Proxy({}, handler);
-            };
+            new Proxy(function(){}, handler);
+    },
+    apply: function(target, thisArg, argumentsList) {
+        return new Proxy(function(){}, handler);
     }
 };
 
-var p = new Proxy({}, handler);
+var p = new Proxy(function(){}, handler);
