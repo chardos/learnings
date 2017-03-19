@@ -1,14 +1,14 @@
 // need to detect if is being called or not
 
-var handler = {
+var errorSquasher = {
     get: function(target, name) {
         return name in target ?
             target[name] :
-            new Proxy(function(){}, handler);
+            new Proxy(function(){}, errorSquasher);
     },
     apply: function(target, thisArg, argumentsList) {
-        return new Proxy(function(){}, handler);
+        return new Proxy(function(){}, errorSquasher);
     }
 };
 
-var p = new Proxy(function(){}, handler);
+var p = new Proxy(function(){}, errorSquasher);
