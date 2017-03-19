@@ -12,3 +12,6 @@ var errorSquasher = {
 };
 
 var p = new Proxy(function(){}, errorSquasher);
+
+// Can now get properties and call methods infinitely without errors
+p.func().anotherFunc().aProperty.func()
