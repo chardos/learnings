@@ -1,4 +1,5 @@
 const List = require('immutable').List;
+const Map = require('immutable').Map;
 
 const arr = [1,2,3,4];
 const list = List(arr);
@@ -17,11 +18,13 @@ console.log(newList.sort()); // => [3,4,5]
 console.log(newList); // => [3,4,5]
 
 const arrWithObjs = [
-    {a: 1},
-    {b: 2},
-    {a: 3}
+    Map({a: 1}),
+    Map({b: 2}),
+    Map({a: 3})
 ]
 const objList = List(arrWithObjs);
 
-const firstObj = objList.get(0);
-console.log(firstObj);
+var firstObj = objList.get(0);
+console.log('firstObj', firstObj);
+console.log(firstObj.set('d', 4)); // => {a:1, d:4}
+console.log(objList); //this is unchanged
