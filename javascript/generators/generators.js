@@ -43,6 +43,7 @@ console.log(seq.next().value); // I love spoons
 // =============================================================================
 
 function* generator(){
+    console.log('initial');
     console.log(yield);
     alert(yield);
 }
@@ -50,6 +51,6 @@ var gen = generator()
 
 // the first call of next executes from the start of the function
 // until the first yield statement
-gen.next(); 
+gen.next();  //initial
 gen.next('cats'); // logs
 gen.next('dogs'); // alerts

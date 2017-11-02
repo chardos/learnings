@@ -15,7 +15,6 @@ function curry(fn){
                 return argumentCounter(...args, ...moreArgs)
             }
         }
-        console.log(args);
     };
 
     return argumentCounter;
