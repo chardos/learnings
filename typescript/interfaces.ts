@@ -45,4 +45,21 @@ interface Bet {
 
 let bet: Bet = {price: 4, stake: 2};
 
-bet.price = 3; // error
+//bet.price = 3; // error
+
+
+// ================================================
+// EXCESS PROPERTY CHECKS
+// ================================================
+
+interface SquareConfig {
+    color?: string;
+    width?: number;
+    [propName: string]: any; // This allows extra properties like spikes to be passed in
+}
+
+function createSquare(config: SquareConfig) {
+    // ...
+}
+
+let mySquare = createSquare({ color: "red", width: 100, spikes: 3 });
