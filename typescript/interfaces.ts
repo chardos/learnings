@@ -34,3 +34,15 @@ function createDog(dogConfig: DogInterface): CheckFace {
 }
 
 const dog = createDog({legs: 4})
+
+// ================================================
+// READONLY PROPERTIES
+// ================================================
+interface Bet {
+    readonly price: number;
+    readonly stake: number;
+}
+
+let bet: Bet = {price: 4, stake: 2};
+
+bet.price = 3; // error
