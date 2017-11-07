@@ -87,12 +87,6 @@ interface AsdfConfig {
     [x: string]: string;
 }
 
-function asdf(x: AsdfConfig) {
-    // ...
-}
-
-
-// const tester = asdf(['sdf', 'sdf']); // Ok.
 // const tester: AsdfConfig = ['bro'] // Ok.
 // const tester: AsdfConfig = {0: 'dongle'} // Ok.
 // const tester: AsdfConfig = {'0': 'dongle'} // Ok.
