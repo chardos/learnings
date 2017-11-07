@@ -63,3 +63,37 @@ function createSquare(config: SquareConfig) {
 }
 
 let mySquare = createSquare({ color: "red", width: 100, spikes: 3 });
+
+
+// ================================================
+// FUNCTION TYPES
+// ================================================
+interface SearchFunc {
+    (source: string, subString: string): boolean;
+}
+
+let mySearch: SearchFunc = function(source: string, subString: string) {
+    let result = source.search(subString);
+    return result > -1;
+}
+
+let a = mySearch('godzilla', 'god')
+
+// ================================================
+// INDEXABLE TYPES
+// ================================================
+interface AsdfConfig {
+    [x: number]: string;
+    [x: string]: string;
+}
+
+function asdf(x: AsdfConfig) {
+    // ...
+}
+
+
+// const tester = asdf(['sdf', 'sdf']); // Ok.
+// const tester: AsdfConfig = ['bro'] // Ok.
+// const tester: AsdfConfig = {0: 'dongle'} // Ok.
+// const tester: AsdfConfig = {'0': 'dongle'} // Ok.
+// const tester: AsdfConfig = {'sdf': 'dongle'} // Fails
